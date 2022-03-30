@@ -26,5 +26,10 @@ public class RestaurantController {
         return restaurantService.getRestaurantsByID(id);
     }
 
+    @GetMapping("/all")
+    public List<Restaurant>  getAllRestaurants(){
+        return restaurantService.getAllRestaurants();
+    }
+
 
 }

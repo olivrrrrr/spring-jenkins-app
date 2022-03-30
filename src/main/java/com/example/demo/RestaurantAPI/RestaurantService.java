@@ -21,4 +21,8 @@ public class RestaurantService {
     public Optional<Restaurant> getRestaurantsByID(long id) {
         return restaurantDAO.getRestaurantByID(id);
     }
+
+    public List<Restaurant> getAllRestaurants() {
+        return restaurantDAO.getAllRestaurants();
+    }
 }

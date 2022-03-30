@@ -16,7 +16,7 @@ public class FakeRestaurantDataAccessService implements RestaurantDAO{
     }
 
     @Override
-    public List<Restaurant> getRestaurants(){
+    public List<Restaurant> getAllRestaurants(){
         return db;
     }
 
