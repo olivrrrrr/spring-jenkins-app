@@ -7,5 +7,5 @@ public interface RestaurantDAO {
     Optional<Restaurant> getRestaurantByID(long id);
     List<Restaurant> getAllRestaurants();
     int addRestaurant(Restaurant restaurant);
-    List<Restaurant> deleteRestaurant(long id);
+    int deleteRestaurant(long id);
 }

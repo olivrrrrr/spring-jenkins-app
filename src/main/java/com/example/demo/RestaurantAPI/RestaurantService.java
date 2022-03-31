@@ -27,11 +27,13 @@ public class RestaurantService {
         return restaurantDAO.getAllRestaurants();
     }
 
-    public void addRestaurant(Restaurant restaurant){
+    public int addRestaurant(Restaurant restaurant){
         restaurantDAO.addRestaurant(restaurant);
+        return 1;
     };
 
-    public void deleteRestaurant(long id)  {
+    public int deleteRestaurant(long id)  {
         restaurantDAO.deleteRestaurant(id);
+        return 1;
     }
 }
