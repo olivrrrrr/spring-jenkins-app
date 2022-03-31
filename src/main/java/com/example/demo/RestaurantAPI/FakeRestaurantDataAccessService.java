@@ -25,5 +25,16 @@ public class FakeRestaurantDataAccessService implements RestaurantDAO{
         return db.stream().filter(t -> t.getId() == id).findAny();
     }
 
+    @Override
+    public int addRestaurant(Restaurant restaurant){
+        db.add(restaurant);
+        return 1;
+    };
+
+    @Override
+    public List<Restaurant> deleteRestaurant(long id){
+        db = db.stream().filter(t -> t.getId() != id).toList();
+        return db;
+    }
 
 }

@@ -3,6 +3,7 @@ package com.example.demo.RestaurantAPI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public class RestaurantService {
     private final RestaurantDAO restaurantDAO;
 
     @Autowired
-    public RestaurantService(@Qualifier("postgres")RestaurantDAO restaurantDAO){
+    public RestaurantService(@Qualifier("fake")RestaurantDAO restaurantDAO){
         this.restaurantDAO = restaurantDAO;
     }
 
@@ -24,5 +25,13 @@ public class RestaurantService {
 
     public List<Restaurant> getAllRestaurants() {
         return restaurantDAO.getAllRestaurants();
+    }
+
+    public void addRestaurant(Restaurant restaurant){
+        restaurantDAO.addRestaurant(restaurant);
+    };
+
+    public void deleteRestaurant(long id)  {
+        restaurantDAO.deleteRestaurant(id);
     }
 }

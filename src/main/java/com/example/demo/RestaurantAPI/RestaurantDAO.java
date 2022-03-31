@@ -6,4 +6,6 @@ import java.util.Optional;
 public interface RestaurantDAO {
     Optional<Restaurant> getRestaurantByID(long id);
     List<Restaurant> getAllRestaurants();
+    int addRestaurant(Restaurant restaurant);
+    List<Restaurant> deleteRestaurant(long id);
 }
