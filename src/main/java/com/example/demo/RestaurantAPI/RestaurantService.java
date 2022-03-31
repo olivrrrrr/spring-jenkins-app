@@ -14,7 +14,7 @@ public class RestaurantService {
     private final RestaurantDAO restaurantDAO;
 
     @Autowired
-    public RestaurantService(@Qualifier("fake")RestaurantDAO restaurantDAO){
+    public RestaurantService(@Qualifier("postgres")RestaurantDAO restaurantDAO){
         this.restaurantDAO = restaurantDAO;
     }
 
