@@ -5,7 +5,6 @@ node {
 
 	try {
 		stage('Clone repository') {
-	    	git branch: branch,
 	        	git branch: 'main', credentialsId:'GITHUB_CREDENTIALS', url:"https://github.com/olivrrrrr/jenkins_docker_test"
 	    }
 
