@@ -12,7 +12,7 @@ public class FakeRestaurantDataAccessService implements RestaurantDAO{
     List<Restaurant> db = new ArrayList<>();
 
     public FakeRestaurantDataAccessService(){
-        db.add(new Restaurant(1, "Macky Mayer", "Manchester"));
+        db.add(new Restaurant(1, "Mackie Mayor", "Manchester"));
     }
 
     @Override
@@ -25,5 +25,16 @@ public class FakeRestaurantDataAccessService implements RestaurantDAO{
         return db.stream().filter(t -> t.getId() == id).findAny();
     }
 
+    @Override
+    public int addRestaurant(Restaurant restaurant){
+        db.add(restaurant);
+        return 1;
+    };
+
+    @Override
+    public int deleteRestaurant(long id){
+        db = db.stream().filter(t -> t.getId() != id).toList();
+        return 1;
+    }
 
 }

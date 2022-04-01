@@ -7,7 +7,7 @@
 //import java.util.List;
 //import java.util.Optional;
 //
-//@Repository("restaurants")
+//@Repository("postgres")
 //public class  RestaurantDataAccessService implements RestaurantDAO{
 //
 //    private JdbcTemplate jdbcTemplate;
@@ -21,14 +21,20 @@
 //    public Optional<Restaurant> getRestaurantByID(long id){
 //
 //        String sql = """
-//                SELECT * FROM restaurant WHERE id = ?;
+//                SELECT * FROM restaurants WHERE id = ?;
 //                """;
 //
 //        return jdbcTemplate.query(sql, new RestaurantRowMapper()).stream().findAny();
 //    }
 //
 //    @Override
-//    public List<Restaurant> getRestaurants() {
-//        return null;
+//    public List<Restaurant> getAllRestaurants() {
+//        String sql = """
+//                SELECT * FROM restaurants;
+//                """;
+//
+//        return jdbcTemplate.query(sql, new RestaurantRowMapper()).stream().toList();
+//
 //    }
+//
 //}
